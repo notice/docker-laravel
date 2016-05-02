@@ -1,0 +1,35 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:develop
+    container_name: mysql
+    build: ./mysql
+    environment:
+      - MYSQL_DATABASE=develop
+      - MYSQL_USER=develop
+      - MYSQL_PASSWORD=develop
+      - MYSQL_ROOT_PASSWORD=develop
+  app:
+    image: app:develop
+    container_name: app
+    build: ./app
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=develop
+      - DB_USERNAME=develop
+      - DB_PASSWORD=develop
+    command:
+      - "true"
+  web:
+    image: web:develop
+    container_name: web
+    build: ./web
+    ports:
+      - 80:80
+    links:
+      - mysql
+    volumes_from:
+      - app:rw
+#    command: [php, /var/www/app/current/artisan, migrate]
