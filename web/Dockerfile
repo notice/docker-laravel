@@ -5,7 +5,7 @@ RUN apk --update add tzdata && \
   cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
   apk del tzdata && \
   rm -rf /var/cache/apk/*
-# install PHP
+# install Apache2+PHP
 RUN apk --no-cache add apache2 php-apache2 \
   php php-fpm php-json php-zlib php-xml php-pdo php-phar \
   php-openssl php-curl php-pdo_mysql php-mysql php-mysqli \

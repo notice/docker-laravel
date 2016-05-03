@@ -8,4 +8,3 @@ RUN mkdir -p /var/www/app
 ADD laravel /var/www/app/current
 RUN chown -R 1000 /var/www/app/current/storage
 VOLUME /var/www/app/current
-#CMD /bin/sh # $ docker run -it --name test -v /hoge laravel/test sh
