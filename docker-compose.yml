@@ -28,6 +28,8 @@ services:
     build: ./web
     ports:
       - 80:80
+    depends_on:
+      - mysql
     links:
       - mysql
     volumes_from:

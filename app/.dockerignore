@@ -7,5 +7,5 @@ laravel/.env.example
 laravel/readme.md
 laravel/package.json
 laravel/gulpfile.js
-laravel/.node_modules
+laravel/node_modules
 laravel/tests
